@@ -1478,3 +1478,356 @@ public:
 
 
 
+
+## practical
+write a program to check if a given graph is a complete graph, represent the graph using the adjacency matrix representation?
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    
+    // Get number of vertices from user
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    int matrix[10][10];  // Simple 10x10 matrix for beginners
+    
+    // Input adjacency matrix
+    cout << "Enter adjacency matrix (" << n << "x" << n << "):\n";
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    // Check if graph is complete
+    int isComplete = 1;  // Start assuming it's complete
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                // Diagonal should be 0 (no self-loops)
+                if(matrix[i][j] != 0) {
+                    isComplete = 0;
+                }
+            } else {#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    
+    // Get number of vertices from user
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    int matrix[10][10];  // Simple 10x10 matrix for beginners
+    
+    // Input adjacency matrix
+    cout << "Enter adjacency matrix (" << n << "x" << n << "):\n";
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    // Check if graph is complete
+    int isComplete = 1;  // Start assuming it's complete
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                // Diagonal should be 0 (no self-loops)
+                if(matrix[i][j] != 0) {
+                    isComplete = 0;
+                }
+            } else {
+                // Off-diagonal should be 1 (edge exists)
+                if(matrix[i][j] != 1) {
+                    isComplete = 0;
+                }
+            }
+        }
+    }
+    
+    // Print result
+    if(isComplete == 1) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    
+    // Get number of vertices from user
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    int matrix[10][10];  // Simple 10x10 matrix for beginners
+    
+    // Input adjacency matrix
+    cout << "Enter adjacency matrix (" << n << "x" << n << "):\n";
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    // Check if graph is complete
+    int isComplete = 1;  // Start assuming it's complete
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                // Diagonal should be 0 (no self-loops)
+                if(matrix[i][j] != 0) {
+                    isComplete = 0;
+                }
+            } else {
+                // Off-diagonal should be 1 (edge exists)
+                if(matrix[i][j] != 1) {
+                    isComplete = 0;
+                }
+            }
+        }
+    }
+    
+    // Print result
+    if(isComplete == 1) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    
+    // Get number of vertices from user
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    int matrix[10][10];  // Simple 10x10 matrix for beginners
+    
+    // Input adjacency matrix
+    cout << "Enter adjacency matrix (" << n << "x" << n << "):\n";
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    // Check if graph is complete
+    int isComplete = 1;  // Start assuming it's complete
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                // Diagonal should be 0 (no self-loops)
+                if(matrix[i][j] != 0) {
+                    isComplete = 0;
+                }
+            } else {
+                // Off-diagonal should be 1 (edge exists)
+                if(matrix[i][j] != 1) {
+                    isComplete = 0;
+                }
+            }
+        }
+    }
+    
+    // Print result
+    if(isComplete == 1) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    
+    // Get number of vertices from user
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    int matrix[10][10];  // Simple 10x10 matrix for beginners
+    
+    // Input adjacency matrix
+    cout << "Enter adjacency matrix (" << n << "x" << n << "):\n";
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    // Check if graph is complete
+    int isComplete = 1;  // Start assuming it's complete
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                // Diagonal should be 0 (no self-loops)
+                if(matrix[i][j] != 0) {
+                    isComplete = 0;
+                }
+            } else {
+                // Off-diagonal should be 1 (edge exists)
+                if(matrix[i][j] != 1) {
+                    isComplete = 0;
+                }
+            }
+        }
+    }
+    
+    // Print result
+    if(isComplete == 1) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+
+                // Off-diagonal should be 1 (edge exists)
+                if(matrix[i][j] != 1) {
+                    isComplete = 0;
+                }
+            }
+        }
+    }
+    
+    // Print result
+    if(isComplete == 1) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+
+# write a program to check if a given graph is a complete graph, represent the graph using the adjacency list representation.
+input:
+3 
+3 
+0 1
+0 2
+1 2
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, m;
+    
+    // Input: number of vertices and edges
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    cout << "Enter number of edges: ";
+    cin >> m;
+    
+    // Create adjacency list: vector of vectors
+    vector<vector<int>> adj(n);
+    
+    // Input edges (u v means edge between u and v)
+    cout << "Enter " << m << " edges (u v format):\n";
+    for(int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);  // u → v
+        adj[v].push_back(u);  // v → u (undirected)
+    }
+    
+    // For complete graph: each vertex should have (n-1) neighbors
+    int expectedDegree = n - 1;
+    bool isComplete = true;
+    
+    for(int i = 0; i < n; i++) {
+        if(adj[i].size() != expectedDegree) {
+            isComplete = false;
+            break;
+        }
+    }
+    
+    if(isComplete) {
+        cout << "YES! This is a complete graph." << endl;
+    } else {
+        cout << "NO! This is NOT a complete graph." << endl;
+    }
+    
+    return 0;
+}
+
+# write a program to accept a directed graph G and compute the in degree and out degree of each vertex.
+000000
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, m;
+    
+    cout << "Enter number of vertices: ";
+    cin >> n;
+    
+    cout << "Enter number of edges: ";
+    cin >> m;
+    
+    // Adjacency list for outgoing edges
+    vector<vector<int>> adj(n);
+    
+    // Input edges (directed: u→v)
+    cout << "Enter " << m << " directed edges (u v):\n";
+    for(int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);  // u → v (outgoing from u)
+    }
+    
+    // Calculate degrees
+    vector<int> inDegree(n, 0);
+    vector<int> outDegree(n, 0);
+    
+    // Count out-degree (easy - just list size!)
+    for(int i = 0; i < n; i++) {
+        outDegree[i] = adj[i].size();
+    }
+    
+    // Count in-degree (check who points to me)
+    for(int u = 0; u < n; u++) {
+        for(int v : adj[u]) {
+            inDegree[v]++;
+        }
+    }
+    
+    // Display results
+    cout << "\nVertex | In-Degree | Out-Degree\n";
+    cout << "-------|-----------|-----------\n";
+    for(int i = 0; i < n; i++) {
+        cout << "  " << i << "    |     " << inDegree[i] 
+             << "      |     " << outDegree[i] << endl;
+    }
+    
+    return 0;
+}
+
+
