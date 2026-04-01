@@ -1,0 +1,189 @@
+# 1
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int roll_number;
+    string name;
+    float marks[5];
+
+public:
+    // Default Constructor
+    Student() {
+        roll_number = 0;
+        name = "Unknown";
+        for(int i = 0; i < 5; i++)
+            marks[i] = 0;
+    }
+
+    // Parameterized Constructor
+    Student(int r, string n, float m[]) {
+        roll_number = r;
+        name = n;
+        for(int i = 0; i < 5; i++)
+            marks[i] = m[i];
+    }
+
+    // Overloaded Constructor
+    Student(int r) {
+        roll_number = r;
+        name = "Not Assigned";
+        for(int i = 0; i < 5; i++)
+            marks[i] = 0;
+    }
+
+    // Destructor
+    ~Student() {
+        // Optional message
+        // cout << "Deleted record of Roll No: " << roll_number << endl;
+    }
+
+    // Add Student (Full Details)
+    void addStudent(int r, string n, float m[]) {
+        roll_number = r;
+        name = n;
+        for(int i = 0 ; i < 5; i++)
+            marks[i] = m[i];
+    }
+
+    // Add Student (Only Roll No)
+    void addStudent(int r) {
+        roll_number = r;
+        name = "Temporary";
+        for(int i = 0; i < 5; i++)
+            marks[i] = 0;
+    }
+
+    // Modify Student
+    void modifyStudent() {
+        cout << "Enter new name: ";
+        cin >> name;
+
+        cout << "Enter 5 new marks:\n";
+        for(int i = 0; i < 5; i++)
+            cin >> marks[i];
+    }
+
+    // Display Student
+    void displayStudent() {
+        cout << "\nRoll Number: " << roll_number << endl;
+        cout << "Name: " << name << endl;
+        cout << "Marks: ";
+        for(int i = 0; i < 5; i++)
+            cout << marks[i] << " ";
+        cout << "\nAverage: " << calculateAverage() << endl;
+    }
+
+    // Calculate Average
+    float calculateAverage() {
+        float sum = 0;
+        for(int i = 0; i < 5; i++)
+            sum += marks[i];
+        return sum / 5;
+    }
+
+    // Getter for roll number
+    int getRollNumber() {
+        return roll_number;
+    }
+};
+
+int main() {
+    Student s[100]; // Array of students
+    int count = 0;
+    int choice;
+
+    do {
+        cout << "\n===== Student Record System =====\n";
+        cout << "1. Add Student\n";
+        cout << "2. Display All Students\n";
+        cout << "3. Modify Student\n";
+        cout << "4. Search Student\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch(choice) {
+        case 1: {
+            int roll;
+            string name;
+            float marks[5];
+
+            cout << "Enter Roll Number: ";
+            cin >> roll;
+
+            cout << "Enter Name: ";
+            cin >> name;
+
+            cout << "Enter 5 marks:\n";
+            for(int i = 0; i < 5; i++)
+                cin >> marks[i];
+
+            s[count].addStudent(roll, name, marks);
+            count++;
+
+            cout << "Student added successfully!\n";
+            break;
+        }
+
+        case 2: {
+            if(count == 0) {
+                cout << "No records found!\n";
+            } else {
+                for(int i = 0; i < count; i++) {
+                    s[i].displayStudent();
+                }
+            }
+            break;
+        }
+
+        case 3: {
+            int roll, found = 0;
+            cout << "Enter Roll Number to modify: ";
+            cin >> roll;
+
+            for(int i = 0; i < count; i++) {
+                if(s[i].getRollNumber() == roll) {
+                    s[i].modifyStudent();
+                    cout << "Record updated!\n";
+                    found = 1;
+                    break;
+                }
+            }
+
+            if(!found)
+                cout << "Student not found!\n";
+            break;
+        }
+
+        case 4: {
+            int roll, found = 0;
+            cout << "Enter Roll Number to search: ";
+            cin >> roll;
+
+            for(int i = 0; i < count; i++) {
+                if(s[i].getRollNumber() == roll) {
+                    s[i].displayStudent();
+                    found = 1;
+                    break;
+                }
+            }
+
+            if(!found)
+                cout << "Student not found!\n";
+            break;
+        }
+
+        case 5:
+            cout << "Exiting program...\n";
+            break;
+
+        default:
+            cout << "Invalid choice!\n";
+        }
+
+    } while(choice != 5);
+
+    return 0;
+}
